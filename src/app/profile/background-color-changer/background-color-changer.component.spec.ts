@@ -8,9 +8,8 @@ describe('BackgroundColorChangerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BackgroundColorChangerComponent ]
-    })
-    .compileComponents();
+      declarations: [BackgroundColorChangerComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

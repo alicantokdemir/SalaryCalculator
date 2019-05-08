@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-background-color-changer',
   templateUrl: './background-color-changer.component.html',
-  styleUrls: ['./background-color-changer.component.sass']
+  styleUrls: ['./background-color-changer.component.scss']
 })
 export class BackgroundColorChangerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

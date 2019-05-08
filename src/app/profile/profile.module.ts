@@ -5,9 +5,11 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { BackgroundColorChangerComponent } from './background-color-changer/background-color-changer.component';
 
 @NgModule({
-  declarations: [ProfileComponent, UserDetailsComponent, BackgroundColorChangerComponent],
-  imports: [
-    CommonModule
-  ]
+  declarations: [
+    ProfileComponent,
+    UserDetailsComponent,
+    BackgroundColorChangerComponent
+  ],
+  imports: [CommonModule]
 })
-export class ProfileModule { }
+export class ProfileModule {}
