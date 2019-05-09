@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CalculatorComponent } from './pages';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {CalculatorComponent} from '@app/calculator/pages';
 
 const routes: Routes = [
   {

@@ -1,6 +1,13 @@
 @import '../../../../variables';
 
-.card {
-  max-width: 50%;
-  background-color: $grey;
+@media (min-width: 576px) {
+  .calculator {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 575px) {
+  .calculator {
+    max-width: 80%;
+  }
 }

@@ -1,5 +1,5 @@
 export class SalaryCalc {
-  baseSalary: number;
+  baseSalary = 998;
   totalWorkingHours = 220;
   nightWorkHours: number;
   overtime50Hours: number;
@@ -7,8 +7,8 @@ export class SalaryCalc {
   commuterBenefits: number;
   foodBenefits: number;
 
-  constructor(salaryCalc: Partial<SalaryCalc>) {
-    Object.assign(this, salaryCalc);
+  constructor(salaryCalc?: Partial<SalaryCalc>) {
+    Object.assign(this, salaryCalc || {});
   }
 
   get hourlyRate() {

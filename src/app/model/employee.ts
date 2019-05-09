@@ -1,7 +1,8 @@
 export class Employee {
-  name: string;
+  id?: number;
+  name = '';
   salary: number;
-  constructor(employeeInfo: Partial<Employee>) {
-    Object.assign(this, employeeInfo);
+  constructor(employeeInfo?: Partial<Employee>) {
+    Object.assign(this, employeeInfo || {});
   }
 }

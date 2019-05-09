@@ -1,132 +1,19 @@
-<div class="card my-4 mx-auto">
-  <div class="card-body">
-    <form>
-      <div class="form-group row">
-        <label for="employeeName" class="col-sm-8 col-form-label"
-          >Employee Name:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="employeeName"
-            [(ngModel)]="employee.name"
-            type="number"
-            class="form-control"
-            id="employeeName"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="baseSalary" class="col-sm-8 col-form-label"
-          >Base Salary:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="baseSalary"
-            [(ngModel)]="calc.baseSalary"
-            type="number"
-            class="form-control"
-            id="baseSalary"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="totalWorkingHours" class="col-sm-8 col-form-label"
-          >Total working hours (default 220h):</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="totalWorkingHours"
-            [(ngModel)]="calc.totalWorkingHours"
-            type="number"
-            class="form-control"
-            id="totalWorkingHours"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="hourlyRate" class="col-sm-8 col-form-label"
-          >Hourly rate:</label
-        >
-        <div class="col-sm-4">
-          {{ calc.hourlyRate | number: '.2-4' }}
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="nightWorkHours" class="col-sm-8 col-form-label"
-          >Night working hours +20%:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="nightWorkHours"
-            [(ngModel)]="calc.nightWorkHours"
-            type="number"
-            class="form-control"
-            id="nightWorkHours"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="overtime50Hours" class="col-sm-8 col-form-label"
-          >Overtime +50% hours:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="overtime50Hours"
-            [(ngModel)]="calc.overtime50Hours"
-            type="number"
-            class="form-control"
-            id="overtime50Hours"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="holidayHours" class="col-sm-8 col-form-label"
-          >Holiday Hours:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="holidayHours"
-            [(ngModel)]="calc.holidayHours"
-            type="number"
-            class="form-control"
-            id="holidayHours"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="foodBenefits" class="col-sm-8 col-form-label"
-          >Food Benefits:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="foodBenefits"
-            [(ngModel)]="calc.foodBenefits"
-            type="number"
-            class="form-control"
-            id="foodBenefits"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="commuterBenefits" class="col-sm-8 col-form-label"
-          >Commuter Benefits:</label
-        >
-        <div class="col-sm-4">
-          <input
-            name="commuterBenefits"
-            [(ngModel)]="calc.commuterBenefits"
-            type="number"
-            class="form-control"
-            id="commuterBenefits"
-          />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="total" class="col-sm-8 col-form-label">Total:</label>
-        <div class="col-sm-4">
-          {{ calc.total | currency: 'R$ ' }}
-        </div>
-      </div>
-    </form>
+<div class="container calculator my-4 mx-auto">
+  <div class="row">
+    <div class="col-12">
+      <app-salary-calculator
+        (submitEmployeeForm)="onAddEmployee($event)"
+      ></app-salary-calculator>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-employees-table
+        (deleteEmployee)="onDeleteEmployee($event)"
+        [employees]="employees"
+      ></app-employees-table>
+    </div>
   </div>
 </div>

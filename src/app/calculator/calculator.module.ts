@@ -1,11 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CalculatorComponent} from './pages/calculator/calculator.component';
+import {CalculatorComponent} from '@app/calculator/pages';
 import {FormsModule} from '@angular/forms';
 import {CalculatorRoutingModule} from './calculator.routing';
+import {
+  EmployeesTableComponent,
+  SalaryCalculatorComponent
+} from '@app/calculator/components';
+import {SharedModule} from '@app/shared';
 
 @NgModule({
-  declarations: [CalculatorComponent],
-  imports: [CalculatorRoutingModule, CommonModule, FormsModule]
+  declarations: [
+    CalculatorComponent,
+    EmployeesTableComponent,
+    SalaryCalculatorComponent
+  ],
+  imports: [CalculatorRoutingModule, CommonModule, FormsModule, SharedModule]
 })
 export class CalculatorModule {}
