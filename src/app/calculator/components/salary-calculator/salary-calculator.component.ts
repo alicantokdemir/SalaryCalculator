@@ -26,5 +26,10 @@ export class SalaryCalculatorComponent implements OnInit {
     this.submitEmployeeForm.emit(this.employee);
     this.employee = new Employee();
     this.calc = new SalaryCalc();
+    form.resetForm({
+      employeeName: this.employee.name,
+      baseSalary: this.calc.baseSalary,
+      totalWorkingHours: this.calc.totalWorkingHours
+    });
   }
 }

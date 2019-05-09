@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SalaryCalculatorComponent } from './salary-calculator.component';
+import {SalaryCalculatorComponent} from './salary-calculator.component';
+import {FormsModule} from '@angular/forms';
+import {ErrorMessagesComponent} from '@app/shared/components';
 
 describe('SalaryCalculatorComponent', () => {
   let component: SalaryCalculatorComponent;
@@ -8,9 +10,9 @@ describe('SalaryCalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SalaryCalculatorComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule],
+      declarations: [SalaryCalculatorComponent, ErrorMessagesComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

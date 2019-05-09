@@ -1,6 +1,12 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {CalculatorComponent} from './calculator.component';
+import {
+  SalaryCalculatorComponent,
+  EmployeesTableComponent
+} from '@app/calculator/components';
+import {FormsModule} from '@angular/forms';
+import {SharedModule} from '@app/shared';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
@@ -8,7 +14,12 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CalculatorComponent]
+      imports: [FormsModule, SharedModule],
+      declarations: [
+        CalculatorComponent,
+        SalaryCalculatorComponent,
+        EmployeesTableComponent
+      ]
     }).compileComponents();
   }));
 
@@ -20,5 +31,15 @@ describe('CalculatorComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render salary-calculator', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-salary-calculator')).toBeTruthy();
+  });
+
+  it('should render employees-table', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-employees-table')).toBeTruthy();
   });
 });
